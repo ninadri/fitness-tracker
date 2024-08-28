@@ -8,7 +8,7 @@ logMealButton.addEventListener("click", function () {
 
     let totalCalories = 0; // Sum total calories of meals
 
-    // For each row in the table, create a meal with its properties
+    For each row in the table, create a meal with its properties
     rows.forEach(row => {
         const meal = {
             food: row.cells[1].textContent,
@@ -32,7 +32,7 @@ logMealButton.addEventListener("click", function () {
     const mealsContainer = document.getElementById("meals-container"); //Update section
     mealsContainer.innerHTML = "";
 
-    // Show meals logged in Local Stg by iterating
+//    Show meals logged in Local Stg by iterating
     meals.forEach(meal => {
         const foodItem = document.createElement("div");
         foodItem.classList.add("flex", "flex-row");
