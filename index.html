@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="synthwave">
+<html lang="en" data-theme="emerald">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,54 +12,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
-  <body>
-    <div class="navbar bg-base-100">
-      <div class="flex-1">
-        <a class="text-2xl text-info md:ml-5"
-          >Gains - Health and Fitness Tracker</a
-        >
-      </div>
-      <nav class="flex-none">
-        <!-- Dropdown Button for Smaller Screens -->
-        <div class="dropdown lg:hidden">
-          <div tabindex="0" role="button" class="btn btn-ghost">
-            <!-- Hamburger Menu Icon -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </div>
-          <!-- Dropdown Content -->
-          <ul
-            tabindex="0"
-            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 top-0 right-0"
-          >
-            <li><a class="btn text-error" href="#nutrition">Nutrition</a></li>
-            <li><a class="btn text-error" href="#exercise">Exercise</a></li>
-            <li><a class="btn text-error" href="#tracker">Tracker</a></li>
-          </ul>
-        </div>
-        <!-- Navbar Links for Larger Screens -->
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li><a class="btn text-success" href="#nutrition">Nutrition</a></li>
-            <li><a class="btn text-success" href="#exercise">Exercise</a></li>
-            <li><a class="btn text-success" href="#tracker">Tracker</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-
+  <body class="m-10">
     <!-- Today's Status Container -->
     <div role="tablist" class="tabs tabs-lifted">
       <input
@@ -68,12 +21,13 @@
         role="tab"
         class="tab"
         aria-label="Today's Status"
+        style="white-space: nowrap"
       />
       <div
         role="tabpanel"
         class="tab-content bg-base-100 border-base-300 rounded-box p-6"
       >
-        <section class="hero min-h-screen bg-base-100">
+        <section class="bg-base-100">
           <div class="hero-content flex-col lg:flex-row" id="status">
             <div class="max-w-md">
               <h2 class="font-bold text-info text-center text-6xl lg:text-8xl">
@@ -114,9 +68,10 @@
         type="radio"
         name="my_tabs_2"
         role="tab"
-        class="tab"
-        aria-label="Tab 2"
+        class="tab p-8 "
+        aria-label="About"
         checked="checked"
+        
       />
       <div
         role="tabpanel"
@@ -124,7 +79,29 @@
       >
         <section
           id="nutrition"
-          class="hero min-h-screen bg-base-200 bg-primary flex flex-col items-center justify-center"
+          class="flex flex-col items-center justify-center"
+        >
+          <h2 class="text-5xl font-bold mt-0 mb-8 secondary">How It Works</h2>
+          <img src="./assets/images/Spongebob.png" alt="Spongebob lifting weights" >
+           
+        </section>
+      </div>
+
+      <input
+        type="radio"
+        name="my_tabs_2"
+        role="tab"
+        class="tab p-8"
+        aria-label="Nutrition"
+        
+      />
+      <div
+        role="tabpanel"
+        class="tab-content bg-base-100 border-base-300 rounded-box p-6"
+      >
+        <section
+          id="nutrition"
+          class="flex flex-col items-center justify-center"
         >
           <h2 class="text-7xl font-bold mt-0 mb-8 text-warning">Nutrition</h2>
           <!-- Table Container -->
@@ -217,17 +194,14 @@
         name="my_tabs_2"
         role="tab"
         class="tab"
-        aria-label="Tab 3"
+        aria-label="Exercise"
       />
       <div
         role="tabpanel"
         class="tab-content bg-base-100 border-base-300 rounded-box p-6"
       >
         <!-- Exercise Section -->
-        <section
-          id="exercise"
-          class="bg-accent hero min-h-screen flex flex-col items-start"
-        >
+        <section id="exercise" class="flex flex-col items-start">
           <h2 class="text-6xl font-bold m-5 text-primary">Exercise</h2>
           <div
             class="flex flex-col lg:flex-row w-full mt-10 items-center lg:justify-around"
@@ -236,53 +210,27 @@
               tabindex="0"
               class="rounded-lg shadow-2xl collapse collapse-open w-4/5 md:w-3/5 lg:w-1/5"
             >
-              <div class="font-bold text-2xl text-center m-3">
-                Choose Muscle Group
-              </div>
+             
               <!-- Lists muscle groups to choose from -->
-              <ul class="flex flex-col" id="body-part-list">
-                <button
-                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
+              <div class="dropdown font-bold text-2xl text-center m-3">
+                <div tabindex="0" role="button" class="btn m-1">Pick A Muscle Group</div>
+                <ul
+                  tabindex="0"
+                  class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-8 shadow muscle"
+                  id="body-part-list"
                 >
-                  Abs
-                </button>
-                <button
-                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
-                >
-                  Back
-                </button>
-                <button
-                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
-                >
-                  Biceps
-                </button>
-                <button
-                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
-                >
-                  Chest
-                </button>
-                <button
-                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
-                >
-                  Legs
-                </button>
-                <button
-                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
-                >
-                  Quads
-                </button>
-                <button
-                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
-                >
-                  Shoulders
-                </button>
-                <button
-                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
-                >
-                  Triceps
-                </button>
-              </ul>
-            </div>
+                  <li><a>Abs</a></li>
+                  <li><a>Back</a></li>
+                  <li><a>Biceps</a></li>
+                  <li><a>Chest</a></li>
+                  <li><a>Legs</a></li>
+                  <li><a>Quads</a></li>
+                  <li><a>Shoulders</a></li>
+                  <li><a>Triceps</a></li>
+                </ul>
+              </div>
+           
+              
             <div
               class="grid grid-cols-2 mt-10 mb-10 w-4/5 md:w-3/5 lg:w-2/5 lg:h-3/5 lg:text-2xl"
               id="exercise-list"
@@ -371,7 +319,7 @@
       </div>
     </div>
 
-    <footer class="footer footer-center p-4 bg-info text-base-300">
+    <footer class="footer footer-center p-4 text-base-300">
       <aside>
         <p>Copyright © 2024 - <strong>Gains</strong> by The Quad</p>
       </aside>
