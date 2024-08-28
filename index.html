@@ -4,24 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Health and Fitness Tracker</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
     <div class="navbar bg-base-100">
       <div class="flex-1">
-        <a class="text-2xl text-info md:ml-5"> Gains - Health and Fitness Tracker</a>
+        <a class="text-2xl text-info md:ml-5"
+          >Gains - Health and Fitness Tracker</a
+        >
       </div>
       <nav class="flex-none">
         <!-- Dropdown Button for Smaller Screens -->
         <div class="dropdown lg:hidden">
           <div tabindex="0" role="button" class="btn btn-ghost">
             <!-- Hamburger Menu Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
           </div>
           <!-- Dropdown Content -->
-          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 top-0 right-0">
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 top-0 right-0"
+          >
             <li><a class="btn text-error" href="#nutrition">Nutrition</a></li>
             <li><a class="btn text-error" href="#exercise">Exercise</a></li>
             <li><a class="btn text-error" href="#tracker">Tracker</a></li>
@@ -37,163 +59,326 @@
         </div>
       </nav>
     </div>
-<!--Today's Status Container-->
- <section class="hero min-h-screen bg-base-100">
-  <div class="hero-content flex-col lg:flex-row" id="status">
-   <div class="max-w-md">
-    <h2 class="font-bold text-info text-center text-6xl lg:text-8xl">Today's Status</h2>
-   </div>
 
-    <div class="stats stats-horizontal shadow text-primary-content">
-   <!--Meal Stat-->
-   <div class="stat bg-primary">
-    <div class="stat-title text-4xl text-base-content font-bold">Meals</div>
-    <div class="flex flex-row">
-      <div class="text-black mt-2 mr-2" id="meals-container"> 
-        <!--Food and calories Summary table--> 
-      </div>
-      </div>
-      <div class="mt-5 mr-5"><strong>Total Calories:</strong>
-      <div id="total-calories"> 0 </div>
-      </div>
-  </div>
-
-  <!--Exercise Stat-->
-  <div class="stat bg-accent rounded-r-2xl">
-    <div class="stat-title text-4xl text-base-content font-bold">Exercises</div>
-    <div class="text-black mt-2 mr-2" id="exercise-container"> 
-      <!--Exercise and summary table-->
-    </div>
-  </div>
-</div>
-</section>
-
-
-<!--Nutrition Section-->
-  <main> 
-   <section id="nutrition" class="hero min-h-screen bg-base-200 bg-primary flex flex-col items-center justify-center">
-    <h2 class="text-7xl font-bold mt-0 mb-8 text-warning"> Nutrition</h2>
-      <!--Table Container-->
-      <div class="card card-normal bg-primary text-primary-content rounded-lg shadow-2xl ml-5 mr-5">
-       <div class="card-body">
-        <div class="overflow-x-auto">
-         <table class="table table-auto table-fixed">
-          <!-- head -->
-          <thead>
-            <tr>
-              <th>
-                <label>
-                  <!-- <input type="checkbox" class="checkbox" /> -->
-                </label>
-              </th>
-              <th class="lg:text-3xl md:text-2xl text-base text-base-content">Food</th>
-              <th class="lg:text-3xl md:text-2xl text-base text-base-content">Calories</th>
-              <th class="lg:text-3xl md:text-2xl text-base text-base-content">Carbs</th>
-              <th class="lg:text-3xl md:text-2xl text-base text-base-content">Fats</th>
-              <th class="lg:text-3xl md:text-2xl text-base text-base-content">Protein</th>
-            </tr>
-          </thead>
-          <tbody class="text-neutral-content" id="display-food">
-            <!-- row 1 -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="flex justify-between mt-4">
-      <button class="btn btn-sm lg:btn-md mb-4 ml-4" id="delete">Delete</button>
-      <button id="log-meal" class="btn btn-sm lg:btn-md btn-secondary mb-4 mr-4">Log Meal</button>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<!--Analyze Food Modal-->
-<div class="mb-8"></div>
-      <button class="btn btn-sm lg:btn-md btn-accent is-focused self-center" onclick="my_modal_2.showModal()">Add Food to Analyze</button>
-      <dialog id="my_modal_2" class="modal">
-      <div class="modal-box">
-        <form method="dialog" id="food-input">
-          <label>Enter amount of food to get its nutrition facts!</label>
-          <input class="w-full h-12 mt-5 p-2" id="food">
-            <div class="modal-action">
-          <!-- if there is a button in form, it will close the modal -->
-              <button class="btn btn-outline btn-error">Cancel</button>
-              <button class="btn btn-outline btn-secondary" type="submit">Analyze</button>
+    <!-- Today's Status Container -->
+    <div role="tablist" class="tabs tabs-lifted">
+      <input
+        type="radio"
+        name="my_tabs_2"
+        role="tab"
+        class="tab"
+        aria-label="Today's Status"
+      />
+      <div
+        role="tabpanel"
+        class="tab-content bg-base-100 border-base-300 rounded-box p-6"
+      >
+        <section class="hero min-h-screen bg-base-100">
+          <div class="hero-content flex-col lg:flex-row" id="status">
+            <div class="max-w-md">
+              <h2 class="font-bold text-info text-center text-6xl lg:text-8xl">
+                Today's Status
+              </h2>
             </div>
-        </form>
-      </div>
-    </dialog>
-</div>
-</section>
-
-    <!--Exercise Section-->
-    <section id="exercise" class="bg-accent hero min-h-screen flex flex-col items-start">
-      <h2 class="text-6xl font-bold m-5 text-primary">Exercise</h2>
-      <div class="flex flex-col lg:flex-row w-full mt-10 items-center lg:justify-around ">
-        <div tabindex="0" class="rounded-lg shadow-2xl collapse collapse-open w-4/5 md:w-3/5 lg:w-1/5">
-          <div class="font-bold text-2xl text-center m-3">
-            Choose Muscle Group
+            <div class="stats stats-horizontal shadow text-primary-content">
+              <!-- Meal Stat -->
+              <div class="stat bg-primary">
+                <div class="stat-title text-4xl text-base-content font-bold">
+                  Meals
+                </div>
+                <div class="flex flex-row">
+                  <div class="text-black mt-2 mr-2" id="meals-container">
+                    <!-- Food and calories Summary table -->
+                  </div>
+                </div>
+                <div class="mt-5 mr-5">
+                  <strong>Total Calories:</strong>
+                  <div id="total-calories">0</div>
+                </div>
+              </div>
+              <!-- Exercise Stat -->
+              <div class="stat bg-accent rounded-r-2xl">
+                <div class="stat-title text-4xl text-base-content font-bold">
+                  Exercises
+                </div>
+                <div class="text-black mt-2 mr-2" id="exercise-container">
+                  <!-- Exercise and summary table -->
+                </div>
+              </div>
+            </div>
           </div>
-          <!--Lists muscle groups to choose from-->
-          <ul class="flex flex-col" id="body-part-list"> 
-            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Abs</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Back</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Biceps</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Chest</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Legs</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Quads</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Shoulders</button>
-            <button class="btn btn-accent text-base-content text-2xl m-2 muscle">Triceps</button>
-          </ul>
-        </div>
-      <div class="grid grid-cols-2 mt-10 mb-10 w-4/5 md:w-3/5 lg:w-2/5 lg:h-3/5 lg:text-2xl" id="exercise-list">
-        <!--Placeholder buttons to avoid empty space on screen, will be replaced by exercise options on click-->
-        <button class="btn btn-primary text-base-content text-base m-5 text-xs">Select</button>
-        <button class="btn btn-primary text-base-content text-base m-5 text-xs">a</button>
-        <button class="btn btn-primary text-base-content text-base m-5 text-xs">muscle</button>
-        <button class="btn btn-primary text-base-content text-base m-5 text-xs">group</button>
-        <button class="btn btn-primary text-base-content text-base m-5 text-xs">to</button>
-        <button class="btn btn-primary text-base-content text-base m-5 text-xs">see</button>
-        <button class="btn btn-primary text-base-content text-base m-5 text-xs">exercises</button>
-        <button class="btn btn-primary text-base-content text-base m-5 text-xs">for</button>
-        <button class="btn btn-primary text-base-content text-base m-5 text-xs">that</button>
-        <button class="btn btn-primary text-base-content text-base m-5 text-xs">muscle</button>
+        </section>
       </div>
-      <!--Instructions Card-->
-      <div class="card bg-info shadow-xl mb-10 w-4/5 md:w-3/5 lg:w-1/5 h-3/5">
-        <div class="card-body">
-          <h2 class="text-center text-2xl font-bold"><span id="exercise-title"></span>
-            <!--appended exercise title inserts here-->
-          </h2>
-          <label>Instructions:</label>
-          <ul id="exercise-instructions">
-            <!-- appended instructions insert here -->
-          </ul>
-          <label>Notes:</label>
-          <textarea id="exercise-note" placeholder="Add workout notes here" class="h-52 bg-info border-solid border-white rounded"></textarea>
-          <button id="log-exercise" class="btn btn-primary text-base-content text-lg md:text-lg">Log Exercise</button>
-        </div>
-      </div>
-    </section>
 
-<!--Weekly Progress Tracker-->
-    <!--Incoming Updates Section Here-->
-    <section id="tracker" class="bg-info hero min-h-screen">
-      <div id="tracker">
-        <h2 class="text-2xl md:text-5xl font-bold mb-10 ml-10">Track Your Weekly Progress!</h2>
-        <div class="ml-10 mr-10"> <img src="./tracker.png" alt="An image of a weekly tracker" style="width: 1200px; height: 600px;"/></div>
+      <input
+        type="radio"
+        name="my_tabs_2"
+        role="tab"
+        class="tab"
+        aria-label="Tab 2"
+        checked="checked"
+      />
+      <div
+        role="tabpanel"
+        class="tab-content bg-base-100 border-base-300 rounded-box p-6"
+      >
+        <section
+          id="nutrition"
+          class="hero min-h-screen bg-base-200 bg-primary flex flex-col items-center justify-center"
+        >
+          <h2 class="text-7xl font-bold mt-0 mb-8 text-warning">Nutrition</h2>
+          <!-- Table Container -->
+          <div
+            class="card card-normal bg-primary text-primary-content rounded-lg shadow-2xl ml-5 mr-5"
+          >
+            <div class="card-body">
+              <div class="overflow-x-auto">
+                <table class="table table-auto table-fixed">
+                  <!-- head -->
+                  <thead>
+                    <tr>
+                      <th>
+                        <label>
+                          <!-- <input type="checkbox" class="checkbox" /> -->
+                        </label>
+                      </th>
+                      <th
+                        class="lg:text-3xl md:text-2xl text-base text-base-content"
+                      >
+                        Food
+                      </th>
+                      <th
+                        class="lg:text-3xl md:text-2xl text-base text-base-content"
+                      >
+                        Calories
+                      </th>
+                      <th
+                        class="lg:text-3xl md:text-2xl text-base text-base-content"
+                      >
+                        Carbs
+                      </th>
+                      <th
+                        class="lg:text-3xl md:text-2xl text-base text-base-content"
+                      >
+                        Fats
+                      </th>
+                      <th
+                        class="lg:text-3xl md:text-2xl text-base text-base-content"
+                      >
+                        Protein
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-neutral-content" id="display-food">
+                    <!-- row 1 -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="flex justify-between mt-4">
+              <button class="btn btn-sm lg:btn-md mb-4 ml-4" id="delete">
+                Delete
+              </button>
+              <button
+                id="log-meal"
+                class="btn btn-sm lg:btn-md btn-secondary mb-4 mr-4"
+              >
+                Log Meal
+              </button>
+            </div>
+          </div>
+          <div class="mb-8"></div>
+          <button
+            class="btn btn-sm lg:btn-md btn-accent is-focused self-center"
+            onclick="my_modal_2.showModal()"
+          >
+            Add Food to Analyze
+          </button>
+          <dialog id="my_modal_2" class="modal">
+            <div class="modal-box">
+              <form method="dialog" id="food-input">
+                <label>Enter amount of food to get its nutrition facts!</label>
+                <input class="w-full h-12 mt-5 p-2" id="food" />
+                <div class="modal-action">
+                  <!-- if there is a button in form, it will close the modal -->
+                  <button class="btn btn-outline btn-error">Cancel</button>
+                  <button class="btn btn-outline btn-secondary" type="submit">
+                    Analyze
+                  </button>
+                </div>
+              </form>
+            </div>
+          </dialog>
+        </section>
       </div>
-    </section>
-    </main>
+
+      <input
+        type="radio"
+        name="my_tabs_2"
+        role="tab"
+        class="tab"
+        aria-label="Tab 3"
+      />
+      <div
+        role="tabpanel"
+        class="tab-content bg-base-100 border-base-300 rounded-box p-6"
+      >
+        <!-- Exercise Section -->
+        <section
+          id="exercise"
+          class="bg-accent hero min-h-screen flex flex-col items-start"
+        >
+          <h2 class="text-6xl font-bold m-5 text-primary">Exercise</h2>
+          <div
+            class="flex flex-col lg:flex-row w-full mt-10 items-center lg:justify-around"
+          >
+            <div
+              tabindex="0"
+              class="rounded-lg shadow-2xl collapse collapse-open w-4/5 md:w-3/5 lg:w-1/5"
+            >
+              <div class="font-bold text-2xl text-center m-3">
+                Choose Muscle Group
+              </div>
+              <!-- Lists muscle groups to choose from -->
+              <ul class="flex flex-col" id="body-part-list">
+                <button
+                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
+                >
+                  Abs
+                </button>
+                <button
+                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
+                >
+                  Back
+                </button>
+                <button
+                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
+                >
+                  Biceps
+                </button>
+                <button
+                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
+                >
+                  Chest
+                </button>
+                <button
+                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
+                >
+                  Legs
+                </button>
+                <button
+                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
+                >
+                  Quads
+                </button>
+                <button
+                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
+                >
+                  Shoulders
+                </button>
+                <button
+                  class="btn btn-accent text-base-content text-2xl m-2 muscle"
+                >
+                  Triceps
+                </button>
+              </ul>
+            </div>
+            <div
+              class="grid grid-cols-2 mt-10 mb-10 w-4/5 md:w-3/5 lg:w-2/5 lg:h-3/5 lg:text-2xl"
+              id="exercise-list"
+            >
+              <!-- Placeholder buttons to avoid empty space on screen, will be replaced by exercise options on click -->
+              <button
+                class="btn btn-primary text-base-content text-base m-5 text-xs"
+              >
+                Select
+              </button>
+              <button
+                class="btn btn-primary text-base-content text-base m-5 text-xs"
+              >
+                a
+              </button>
+              <button
+                class="btn btn-primary text-base-content text-base m-5 text-xs"
+              >
+                muscle
+              </button>
+              <button
+                class="btn btn-primary text-base-content text-base m-5 text-xs"
+              >
+                group
+              </button>
+              <button
+                class="btn btn-primary text-base-content text-base m-5 text-xs"
+              >
+                to
+              </button>
+              <button
+                class="btn btn-primary text-base-content text-base m-5 text-xs"
+              >
+                see
+              </button>
+              <button
+                class="btn btn-primary text-base-content text-base m-5 text-xs"
+              >
+                exercises
+              </button>
+              <button
+                class="btn btn-primary text-base-content text-base m-5 text-xs"
+              >
+                for
+              </button>
+              <button
+                class="btn btn-primary text-base-content text-base m-5 text-xs"
+              >
+                that
+              </button>
+              <button
+                class="btn btn-primary text-base-content text-base m-5 text-xs"
+              >
+                muscle
+              </button>
+            </div>
+            <!-- Instructions Card -->
+            <div
+              class="card bg-info shadow-xl mb-10 w-4/5 md:w-3/5 lg:w-1/5 h-3/5"
+            >
+              <div class="card-body">
+                <h2 class="text-center text-2xl font-bold">
+                  <span id="exercise-title"></span>
+                  <!-- appended exercise title inserts here -->
+                </h2>
+                <label>Instructions:</label>
+                <ul id="exercise-instructions">
+                  <!-- appended instructions insert here -->
+                </ul>
+                <label>Notes:</label>
+                <textarea
+                  id="exercise-note"
+                  placeholder="Add workout notes here"
+                  class="h-52 bg-info border-solid border-white rounded"
+                ></textarea>
+                <button
+                  id="log-exercise"
+                  class="btn btn-primary text-base-content text-lg md:text-lg"
+                >
+                  Log Exercise
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="footer footer-center p-4 bg-info text-base-300">
+      <aside>
+        <p>Copyright © 2024 - <strong>Gains</strong> by The Quad</p>
+      </aside>
+    </footer>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/stg.js"></script>
   </body>
-  
-  <footer class="footer footer-center p-4 bg-info text-base-300">
-    <aside>
-      <p> Copyright © 2024 - <strong>Gains</strong> by The Quad </p>
-    </aside>
-  </footer>
 </html>
