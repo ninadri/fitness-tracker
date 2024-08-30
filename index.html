@@ -13,6 +13,7 @@
   </head>
 
   <body class="m-10">
+    
     <!-- Today's Status Container -->
     <div role="tablist" class="tabs tabs-lifted">
       <input
@@ -25,14 +26,15 @@
       />
       <div
         role="tabpanel"
-        class="tab-content bg-base-100 border-base-300 rounded-box p-6"
+        class="tab-content border-base-300 rounded-box p-6"
       >
-        <section class="bg-base-100">
+        <section>
           <div class="hero-content flex-col lg:flex-row" id="status">
             <div class="max-w-md">
               <h2 class="font-bold text-info text-center text-6xl lg:text-8xl">
                 Today's Status
               </h2>
+              <h4 class="m-5">Log your meals of the day in the <strong>Nutrition</strong> tab and your workouts in the <strong>Excercise</strong> tab. Once logged, it will appear here. </h4>
             </div>
             <div class="stats stats-horizontal shadow text-primary-content">
               <!-- Meal Stat -->
@@ -55,9 +57,11 @@
                 <div class="stat-title text-4xl text-base-content font-bold">
                   Exercises
                 </div>
+                
                 <div class="text-black mt-2 mr-2" id="exercise-container">
                   <!-- Exercise and summary table -->
                 </div>
+                
               </div>
             </div>
           </div>
@@ -68,32 +72,37 @@
         type="radio"
         name="my_tabs_2"
         role="tab"
-        class="tab p-8 "
+        class="tab p-8"
         aria-label="About"
         checked="checked"
-        
       />
       <div
         role="tabpanel"
-        class="tab-content bg-base-100 border-base-300 rounded-box p-6"
+        class="tab-content bg-base-100 border-base-300 rounded-box p-6 " 
       >
         <section
           id="nutrition"
-          class="flex flex-col items-center justify-center"
         >
-          <h2 class="text-5xl font-bold mt-0 mb-8 secondary">How It Works</h2>
-          <img src="./assets/images/Spongebob.png" alt="Spongebob lifting weights" >
-           
+          <h2 class="text-5xl font-bold mt-0 mb-8 secondary w-full text-center items-center">Welcome to Gains</h2>
+          <div class="flex flex-col md:flex-row">
+          <img
+            src="./assets/images/Spongebob.png"
+            alt="Spongebob lifting weights"
+       
+          />
+          <p class="m-5 text-center">
+           <strong class="about-bold"> The ultimate fitness companion designed to empower you on your wellness journey.</strong> 
+            With our effortless meal planner enabling you to monitor calorie intake, and access to an extensive exercise library to customize your workout regimen,
+            staying motivated is easy. Plus with the 'Today's Status' feature, you’ll stay on track.  Whether you're a beginner or a seasoned athlete,  <strong>Gains </strong>is your trusted partner for reaching your health and fitness goals, one step at a time. </p> 
+          </div>
         </section>
       </div>
-
       <input
         type="radio"
         name="my_tabs_2"
         role="tab"
         class="tab p-8"
         aria-label="Nutrition"
-        
       />
       <div
         role="tabpanel"
@@ -169,12 +178,12 @@
             class="btn btn-sm lg:btn-md btn-accent is-focused self-center"
             onclick="my_modal_2.showModal()"
           >
-            Add Food to Analyze
+            Click Me to Add Food
           </button>
           <dialog id="my_modal_2" class="modal">
             <div class="modal-box">
               <form method="dialog" id="food-input">
-                <label>Enter amount of food to get its nutrition facts!</label>
+                <label>Enter amount of food. Ex: 1 cup rice</label>
                 <input class="w-full h-12 mt-5 p-2" id="food" />
                 <div class="modal-action">
                   <!-- if there is a button in form, it will close the modal -->
@@ -206,113 +215,109 @@
           <div
             class="flex flex-col lg:flex-row w-full mt-10 items-center lg:justify-around"
           >
-            <div
-              tabindex="0"
-              class="rounded-lg shadow-2xl collapse collapse-open w-4/5 md:w-3/5 lg:w-1/5"
-            >
-             
-              <!-- Lists muscle groups to choose from -->
-              <div class="dropdown font-bold text-2xl text-center m-3">
-                <div tabindex="0" role="button" class="btn m-1">Pick A Muscle Group</div>
-                <ul
-                  tabindex="0"
-                  class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-8 shadow muscle"
-                  id="body-part-list"
-                >
-                  <li><a>Abs</a></li>
-                  <li><a>Back</a></li>
-                  <li><a>Biceps</a></li>
-                  <li><a>Chest</a></li>
-                  <li><a>Legs</a></li>
-                  <li><a>Quads</a></li>
-                  <li><a>Shoulders</a></li>
-                  <li><a>Triceps</a></li>
-                </ul>
-              </div>
-           
-              
-            <div
-              class="grid grid-cols-2 mt-10 mb-10 w-4/5 md:w-3/5 lg:w-2/5 lg:h-3/5 lg:text-2xl"
-              id="exercise-list"
-            >
-              <!-- Placeholder buttons to avoid empty space on screen, will be replaced by exercise options on click -->
-              <button
-                class="btn btn-primary text-base-content text-base m-5 text-xs"
-              >
-                Select
-              </button>
-              <button
-                class="btn btn-primary text-base-content text-base m-5 text-xs"
-              >
-                a
-              </button>
-              <button
-                class="btn btn-primary text-base-content text-base m-5 text-xs"
-              >
-                muscle
-              </button>
-              <button
-                class="btn btn-primary text-base-content text-base m-5 text-xs"
-              >
-                group
-              </button>
-              <button
-                class="btn btn-primary text-base-content text-base m-5 text-xs"
-              >
-                to
-              </button>
-              <button
-                class="btn btn-primary text-base-content text-base m-5 text-xs"
-              >
-                see
-              </button>
-              <button
-                class="btn btn-primary text-base-content text-base m-5 text-xs"
-              >
-                exercises
-              </button>
-              <button
-                class="btn btn-primary text-base-content text-base m-5 text-xs"
-              >
-                for
-              </button>
-              <button
-                class="btn btn-primary text-base-content text-base m-5 text-xs"
-              >
-                that
-              </button>
-              <button
-                class="btn btn-primary text-base-content text-base m-5 text-xs"
-              >
-                muscle
-              </button>
+          
+            <!-- Lists muscle groups to choose from -->
+            <div class="dropdown font-bold text-2xl text-center m-3">
+              <div tabindex="0" role="button" class="btn m-1">
+              Pick A Muscle Group
             </div>
-            <!-- Instructions Card -->
-            <div
-              class="card bg-info shadow-xl mb-10 w-4/5 md:w-3/5 lg:w-1/5 h-3/5"
+            <ul
+              tabindex="0"
+              class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-8 shadow muscle"
+              id="body-part-list"
             >
-              <div class="card-body">
-                <h2 class="text-center text-2xl font-bold">
-                  <span id="exercise-title"></span>
-                  <!-- appended exercise title inserts here -->
-                </h2>
-                <label>Instructions:</label>
-                <ul id="exercise-instructions">
-                  <!-- appended instructions insert here -->
-                </ul>
-                <label>Notes:</label>
-                <textarea
-                  id="exercise-note"
-                  placeholder="Add workout notes here"
-                  class="h-52 bg-info border-solid border-white rounded"
-                ></textarea>
-                <button
-                  id="log-exercise"
-                  class="btn btn-primary text-base-content text-lg md:text-lg"
-                >
-                  Log Exercise
-                </button>
-              </div>
+              <li><a>Abs</a></li>
+              <li><a>Back</a></li>
+              <li><a>Biceps</a></li>
+              <li><a>Chest</a></li>
+              <li><a>Legs</a></li>
+              <li><a>Quads</a></li>
+              <li><a>Shoulders</a></li>
+              <li><a>Triceps</a></li>
+            </ul>
+          </div>
+
+          <div
+            class="grid grid-cols-2 mt-10 mb-10 w-4/5 md:w-3/5 lg:w-2/5 lg:h-3/5 lg:text-2xl"
+            id="exercise-list"
+          >
+            <!-- Placeholder buttons to avoid empty space on screen, will be replaced by exercise options on click -->
+            <button
+              class="btn btn-primary text-base-content text-base m-5 text-xs"
+            >
+              Select
+            </button>
+            <button
+              class="btn btn-primary text-base-content text-base m-5 text-xs"
+            >
+              a
+            </button>
+            <button
+              class="btn btn-primary text-base-content text-base m-5 text-xs"
+            >
+              muscle
+            </button>
+            <button
+              class="btn btn-primary text-base-content text-base m-5 text-xs"
+            >
+              group
+            </button>
+            <button
+              class="btn btn-primary text-base-content text-base m-5 text-xs"
+            >
+              to
+            </button>
+            <button
+              class="btn btn-primary text-base-content text-base m-5 text-xs"
+            >
+              see
+            </button>
+            <button
+              class="btn btn-primary text-base-content text-base m-5 text-xs"
+            >
+              exercises
+            </button>
+            <button
+              class="btn btn-primary text-base-content text-base m-5 text-xs"
+            >
+              for
+            </button>
+            <button
+              class="btn btn-primary text-base-content text-base m-5 text-xs"
+            >
+              that
+            </button>
+            <button
+              class="btn btn-primary text-base-content text-base m-5 text-xs"
+            >
+              muscle
+            </button>
+          </div>
+          <!-- Instructions Card -->
+          <div
+            class="card bg-info shadow-xl mb-10 w-4/5 md:w-3/5 lg:w-1/5 h-3/5"
+          >
+            <div class="card-body">
+              <h2 class="text-center text-2xl font-bold">
+                <span id="exercise-title"></span>
+                <!-- appended exercise title inserts here -->
+              </h2>
+              <label>Instructions:</label>
+              <ul id="exercise-instructions">
+                <!-- appended instructions insert here -->
+              </ul>
+              <label>Notes:</label>
+              <textarea
+                id="exercise-note"
+                placeholder="Add workout notes here"
+                class="h-52 bg-info border-solid border-white rounded"
+              ></textarea>
+              <button
+                id="log-exercise"
+                class="btn btn-primary text-base-content text-lg md:text-lg"
+              >
+                Log Exercise
+              </button>
             </div>
           </div>
         </section>

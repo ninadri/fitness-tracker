@@ -1,0 +1,10 @@
+h4 {
+  color: rgb(0, 0, 0); /* Changes the text color to blue */
+  font-size: 18px; /* Sets the font size to 16 pixels */
+  line-height: 1.5; /* Adjusts the line height for better readability */
+
+  text-align: center;
+}
+.about-bold {
+  font-size: 19px;
+}
