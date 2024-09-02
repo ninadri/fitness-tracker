@@ -1,10 +1,17 @@
 h4 {
-  color: rgb(0, 0, 0); /* Changes the text color to blue */
-  font-size: 18px; /* Sets the font size to 16 pixels */
-  line-height: 1.5; /* Adjusts the line height for better readability */
-
-  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
 }
 .about-bold {
   font-size: 19px;
+}
+
+img {
+  width: 400px;
+  height: auto;
+}
+
+input[type="checkbox"] {
+  transform: scale(0.7); /* Increase size by 50% */
+  -webkit-transform: scale(0.7); /* For Safari */
 }

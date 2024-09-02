@@ -13,7 +13,6 @@
   </head>
 
   <body class="m-10">
-    
     <!-- Today's Status Container -->
     <div role="tablist" class="tabs tabs-lifted">
       <input
@@ -24,17 +23,18 @@
         aria-label="Today's Status"
         style="white-space: nowrap"
       />
-      <div
-        role="tabpanel"
-        class="tab-content border-base-300 rounded-box p-6"
-      >
+      <div role="tabpanel" class="tab-content border-base-300 rounded-box p-6">
         <section>
           <div class="hero-content flex-col lg:flex-row" id="status">
             <div class="max-w-md">
               <h2 class="font-bold text-info text-center text-6xl lg:text-8xl">
                 Today's Status
               </h2>
-              <h4 class="m-5">Log your meals of the day in the <strong>Nutrition</strong> tab and your workouts in the <strong>Excercise</strong> tab. Once logged, it will appear here. </h4>
+              <h4 class="m-5">
+                Log your meals of the day in the <strong>Nutrition</strong> tab
+                and your workouts in the <strong>Excercise</strong> tab. Once
+                logged, it will appear here.
+              </h4>
             </div>
             <div class="stats stats-horizontal shadow text-primary-content">
               <!-- Meal Stat -->
@@ -57,11 +57,10 @@
                 <div class="stat-title text-4xl text-base-content font-bold">
                   Exercises
                 </div>
-                
+
                 <div class="text-black mt-2 mr-2" id="exercise-container">
                   <!-- Exercise and summary table -->
                 </div>
-                
               </div>
             </div>
           </div>
@@ -78,22 +77,32 @@
       />
       <div
         role="tabpanel"
-        class="tab-content bg-base-100 border-base-300 rounded-box p-6 " 
+        class="tab-content bg-base-100 border-base-300 rounded-box p-6"
       >
-        <section
-          id="nutrition"
-        >
-          <h2 class="text-5xl font-bold mt-0 mb-8 secondary w-full text-center items-center">Welcome to Gains</h2>
+        <section>
+          <h2
+            class="text-5xl font-bold w-full mb-4 mt-5 text-center items-center text-error-content"
+          >
+            Welcome to Gains
+          </h2>
           <div class="flex flex-col md:flex-row">
-          <img
-            src="./assets/images/Spongebob.png"
-            alt="Spongebob lifting weights"
-       
-          />
-          <p class="m-5 text-center">
-           <strong class="about-bold"> The ultimate fitness companion designed to empower you on your wellness journey.</strong> 
-            With our effortless meal planner enabling you to monitor calorie intake, and access to an extensive exercise library to customize your workout regimen,
-            staying motivated is easy. Plus with the 'Today's Status' feature, you’ll stay on track.  Whether you're a beginner or a seasoned athlete,  <strong>Gains </strong>is your trusted partner for reaching your health and fitness goals, one step at a time. </p> 
+            <img
+              src="./assets/images/Spongebob.png"
+              alt="Spongebob lifting weights"
+            />
+            <p class="text-center m-6">
+              <strong class="about-bold">
+                The ultimate fitness companion designed to empower you on your
+                wellness journey.</strong
+              >
+              With our effortless meal planner enabling you to monitor calorie
+              intake, and access to an extensive exercise library to customize
+              your workout regimen, staying motivated is easy. Plus with the
+              'Today's Status' feature, you’ll stay on track. Whether you're a
+              beginner or a seasoned athlete, <strong>Gains </strong>is your
+              trusted partner for reaching your health and fitness goals, one
+              step at a time.
+            </p>
           </div>
         </section>
       </div>
@@ -115,7 +124,7 @@
           <h2 class="text-7xl font-bold mt-0 mb-8 text-warning">Nutrition</h2>
           <!-- Table Container -->
           <div
-            class="card card-normal bg-primary text-primary-content rounded-lg shadow-2xl ml-5 mr-5"
+            class="card card-normal bg-primary text-primary-content rounded-lg shadow-xl"
           >
             <div class="card-body">
               <div class="overflow-x-auto">
@@ -125,32 +134,22 @@
                     <tr>
                       <th>
                         <label>
-                          <!-- <input type="checkbox" class="checkbox" /> -->
+                          <input type="checkbox" class="checkbox" />
                         </label>
                       </th>
-                      <th
-                        class="lg:text-3xl md:text-2xl text-base text-base-content"
-                      >
+                      <th class="lg:text-3xl md:text-2xl text-base-content">
                         Food
                       </th>
-                      <th
-                        class="lg:text-3xl md:text-2xl text-base text-base-content"
-                      >
+                      <th class="lg:text-3xl md:text-2xl text-base-content">
                         Calories
                       </th>
-                      <th
-                        class="lg:text-3xl md:text-2xl text-base text-base-content"
-                      >
+                      <th class="lg:text-3xl md:text-2xl text-base-content">
                         Carbs
                       </th>
-                      <th
-                        class="lg:text-3xl md:text-2xl text-base text-base-content"
-                      >
+                      <th class="lg:text-3xl md:text-2xl text-base-content">
                         Fats
                       </th>
-                      <th
-                        class="lg:text-3xl md:text-2xl text-base text-base-content"
-                      >
+                      <th class="lg:text-3xl md:text-2xl text-base-content">
                         Protein
                       </th>
                     </tr>
@@ -211,14 +210,16 @@
       >
         <!-- Exercise Section -->
         <section id="exercise" class="flex flex-col items-start">
-          <h2 class="text-6xl font-bold m-5 text-primary">Exercise</h2>
-          <div
-            class="flex flex-col lg:flex-row w-full mt-10 items-center lg:justify-around"
-          >
-          
-            <!-- Lists muscle groups to choose from -->
-            <div class="dropdown font-bold text-2xl text-center m-3">
-              <div tabindex="0" role="button" class="btn m-1">
+          <h2 class="text-6xl font-bold text-primary">Exercise</h2>
+
+          <!-- Lists muscle groups to choose from -->
+          <div class="dropdown font-bold text-2xl text-center m-3">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn m-10"
+              id="dropdown-toggle"
+            >
               Pick A Muscle Group
             </div>
             <ul
@@ -298,14 +299,12 @@
             class="card bg-info shadow-xl mb-10 w-4/5 md:w-3/5 lg:w-1/5 h-3/5"
           >
             <div class="card-body">
-              <h2 class="text-center text-2xl font-bold">
+              <div class="text-center text-2xl font-bold">
                 <span id="exercise-title"></span>
                 <!-- appended exercise title inserts here -->
-              </h2>
+              </div>
               <label>Instructions:</label>
-              <ul id="exercise-instructions">
-                <!-- appended instructions insert here -->
-              </ul>
+              <ul id="exercise-instructions"></ul>
               <label>Notes:</label>
               <textarea
                 id="exercise-note"
